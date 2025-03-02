@@ -1,0 +1,35 @@
+{
+    "name": "youtube-video-summarization-app",
+    "version": "1.0.0",
+    "description": "YouTube Video Summarization App built using open source LLM and Framework like Llama 2, Haystack, Whisper, and Streamlit. This app smoothly runs on CPU as Llama 2 model is in GGUF format loaded through Llama.cpp.",
+    "main": "./build/electron/main.js",
+    "scripts": {
+      "start": "electron .",
+      "serve": "NODE_ENV=\"production\" electron .",
+      "servewindows": "electron .",
+      "pack": "electron-builder --dir",
+      "dist": "electron-builder",
+      "postinstall": "electron-builder install-app-deps",
+      "dump": "dump-stlite-desktop-artifacts"
+    },
+    "build": {
+      "files": ["build/**/*"],
+      "directories": {
+        "buildResources": "assets"
+      },
+      "win": {
+        "target": "portable",
+        "icon": "assets/icon.ico"
+      }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+      "@stlite/desktop": "^0.22.2",
+      "electron": "22.0.0",
+      "electron-builder": "^23.6.0"
+    }
+  }
+  
